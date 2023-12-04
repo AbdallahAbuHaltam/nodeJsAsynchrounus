@@ -29,10 +29,18 @@ const getDogPhoto=async()=>{
     }
     catch(err){
         console.log(err);
+        throw err;
     }
-    
+    return "2:READY";
 }
-getDogPhoto();
+console.log('1:Will get the dog photo');
+getDogPhoto().then(x=>{
+    console.log(x);
+    console.log('3:Done');
+
+}).catch(err=>{
+    console.log('ERROR');
+});
 
 /*readFilePro(`${__dirname}/dog.txt`)
     .then(data=>{
